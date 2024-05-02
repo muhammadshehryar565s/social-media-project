@@ -1,3 +1,8 @@
+**login hint **
+only json server user can be registrated like
+username: atuny0
+password: 9uQFF1Lh
+
 **Project Documentation: Social Networking Website**
 
 **1. Introduction:**
