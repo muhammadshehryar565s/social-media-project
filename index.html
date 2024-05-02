@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LinkedIn</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+    </style>
+  </head>
+
+  <body>
+    <!-- navbar -->
+   
+    <nav
+      class="navbar navbar-expand-lg navbar-light navbarbg sticky-top d-flex mb-5 border-bottom"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <!-- <i
+            class="fab fa-linkedin fa-lg"
+            style="color: #0a66c2; font-size: 2.4rem"
+          ></i> -->
+
+          <i class="fab fa-solid fa-square-poll-horizontal fa-lg" style="color: #74C0FC;"></i>
+        </a>
+        
+        <form class="form-inline">
+          <input
+            class="form-control searche"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            id="search"
+          />
+          
+        </form>
+        
+
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">
+                <i class="fas fa-home fa-lg text-center" style="color: black">
+                  <div class="menutext mt-2" style="color: black">Home</div>
+                </i>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fas fa-briefcase fa-lg text-center">
+                  <div class="menutext mt-2">Jobs</div>
+                </i>
+              </a>
+            </li>
+            <button type="button" class="btn btn-dark" id="clearLocalStorageButton">Dark</button>
+          </ul>
+        </div>
+
+       
+      </div>
+    </nav>
+    <div id="display-data" class="no-results"></div>
+
+    <div class="container">
+      <div class="row">
+        <!-- left - start -->
+        <div class="col-3 d-none d-sm-block">
+          <!-- left -->
+          <div class="card" id="profile">
+     
+          </div>
+          <div class="card mt-3">
+            <div
+              class="card-header"
+              style="margin-bottom: -22px; font-size: 18px"
+            >
+              My Pages
+            </div>
+            <div class="card-body mt-3">
+              <div class="card-title mt-2 mb-1">
+                <img
+                  src="data:image/png;base64,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"
+                  style="width: 32px; height: 32px"
+                />
+                <div
+                  style="
+                    font-size: 15px;
+                    font-weight: bold;
+                    margin-top: -35px;
+                    margin-left: 37px;
+                  "
+                >
+                  C++ Brain
+                </div>
+                <div
+                  style="
+                    font-size: 13px;
+                    font-weight: bold;
+                    color: gray;
+                    margin-left: 38px;
+                  "
+                >
+                  Page Notifications
+                  <span class="float-right" style="color: #0a66c2">10</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+        </div>
+
+        <!-- middle - start -->
+        <div class="col-12 col-sm-6">
+        
+          <hr />
+
+          <!-- <div class="card mt-2 mb-3" id="post-container">
+   
+                </div>
+                <button id="load-more">Load More</button> -->
+
+          <div id="post-container"></div>
+          <!-- <button id="load-more" >Load More</button> -->
+
+          
+        </div>
+
+        <!-- Right - Start -->
+        <div class="col-3 d-none d-sm-block" >
+         
+          <div class="card" style="width: 19rem">
+            <div class="card-header">
+              <span>Followers</span>
+              
+            </div>
+            <div class="card-title mt-3 ">
+              <div class="ml-3" id="followers">
+               
+            
+              </div>
+            </div>
+            
+          
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+
+
+    
+  </body>
+
+  <script src="index.js"></script>
+</html>
