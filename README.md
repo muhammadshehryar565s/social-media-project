@@ -70,12 +70,14 @@ in left hand side
   
 **4. Future Enhancements:**
 
-  **Comments enhancement:**
+ - **Comments enhancement:**
 
-  enhancet the functionliy by post delete and edit the comments 
+    enhancet the functionliy by post delete and edit the comments 
 
-- **Responsive Design:** Ensure the website is fully responsive across various devices for optimal user experience.
-
+- **Responsive Design:**
+-  Ensure the website is fully responsive across various devices for optimal user experience.
+-**Show user with post**
+   show user image and name of particular post
 **5. Conclusion:**
 
 Our social networking website provides a platform for users to connect, share, and interact with each other and make contents. With features like user authentication, post listings, comment display, user search, and personalized user data display, the website offers a comprehensive social networking experience. Through continuous enhancements and updates, we aim to create a vibrant and engaging community for our users.
